@@ -27,7 +27,7 @@ def predict_bullying_type(input_text, bad_words):
     prediction = "Not Cyberbullying" if predicted_types[0] != "OAG" else "Cyberbullying"
     return prediction, predicted_types[0], input_text, detected_bad_words
 
-st.title("Cyberbullying Detection App (Hindi)")
+st.title("Cyberbullying Detection App (Hinglish)")
 
 input_text = st.text_area("Enter a text for cyberbullying detection:")
 
