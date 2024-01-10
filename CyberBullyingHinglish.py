@@ -37,12 +37,21 @@ if st.button("Predict"):
     prediction, bullying_type, filtered_text, detected_bad_words = predict_bullying_type(input_text, bad_words)
     
     st.write("Prediction:", prediction)
-    st.write("Type:", bullying_type)
+    st.write("Cyberbullying Type: ", bullying_type)
     if detected_bad_words:
-        st.write("Bad Words Detected:", ', '.join(detected_bad_words))
+        st.write("Bad Words:", ', '.join(detected_bad_words))
     else:
-        st.write("No bad words detected.")
+        st.write("<span style='color:cyan;'>No bad words found.</span>", unsafe_allow_html=True)
     
-    st.write("Filtered Text:", f"<span style='color:red'>{filtered_text}</span>", unsafe_allow_html=True)
-    print(filtered_text)
+    if bad_words:
+        st.write("Filtered Text:")
+        st.write(f"<span style='color:red; font-weight:bold'>{filtered_text}</span>", unsafe_allow_html=True) 
+    else:
+        st.write("Original Text:")
+        st.write(f"{filtered_text}", unsafe_allow_html=True)
     
+st.header("Sample Texts")
+st.write("It's always the filthy " + "<span style='color:red; font-weight:bold'>bitch</span> that creates problem between us", unsafe_allow_html=True)
+st.write("Do you believe it is appropriate to refer to a Muslim as a " + "<span style='color:red; font-weight:bold'>terrorist</span>?", unsafe_allow_html=True)
+st.write("I hope you're doing well and having a great day. Let's catch up soon! 😊")
+st.write("The team's score is disgraceful.")
