@@ -44,15 +44,14 @@ if st.button("Predict"):
     else:
         st.write("<span style='color:cyan;'>No bad words found.</span>", unsafe_allow_html=True)
     
-    if bad_words:
+    if detected_bad_words:
         st.write("Filtered Text:")
         st.write(f"<span style='color:red; font-weight:bold'>{filtered_text}</span>", unsafe_allow_html=True) 
     else:
         st.write("Original Text:")
-        st.write(f"{filtered_text}", unsafe_allow_html=True)
+        st.write(f"{input_text}", unsafe_allow_html=True)
     
 st.header("Sample Texts")
 st.write("es" + "<span style='color:red; font-weight:bold'> kutte</span> ko jail daal desh drohi hai", unsafe_allow_html=True)
 st.write("" + "<span style='color:red; font-weight:bold'>pappu </span>gandhi", unsafe_allow_html=True)
-st.write("waise bandhu jet lag se bachne ke liye raat ko baje ke baad jao")
-st.write("news main rhane ka accha mauka hai desh aur army army aur bharat mata")
+st.write("bhaijan mera business partner ka naam alisher h hum aaps ak dusre par aankh band krke vishvash krte h")
