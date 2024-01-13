@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 import re
 
+
 def predict_bullying_type(input_text, bad_words):
     df = pd.read_excel("Cleaned_Hinglish_dataset.xlsx")
     df.dropna(subset=["cleaned_text"], inplace=True)
